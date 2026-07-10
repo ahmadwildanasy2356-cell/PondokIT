@@ -22,12 +22,14 @@
             <p style="margin: 5px 0 0; font-style: italic; color: #64748b;">"Menyiapkan Pemuda Buat Ummat"</p>
         </header>
 
-        <nav style="text-align: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 30px;">
-            <a href="#tentang" style="color: #2563eb; text-decoration: none; font-weight: 600; margin: 0 8px;">Tentang</a> • 
-            <a href="#prodi" style="color: #2563eb; text-decoration: none; font-weight: 600; margin: 0 8px;">Program</a> • 
-            <a href="#syarat" style="color: #2563eb; text-decoration: none; font-weight: 600; margin: 0 8px;">Syarat</a> • 
-            <a href="#kurikulum" style="color: #2563eb; text-decoration: none; font-weight: 600; margin: 0 8px;">Kurikulum</a>
-        </nav>
+         <nav style="text-align: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 30px;">
+    <a href="#tentang" style="color: #2563eb; text-decoration: none; font-weight: 600; margin: 0 8px;">Tentang</a> • 
+    <a href="#prodi" style="color: #2563eb; text-decoration: none; font-weight: 600; margin: 0 8px;">Program</a> • 
+    <a href="#syarat" style="color: #2563eb; text-decoration: none; font-weight: 600; margin: 0 8px;">Syarat</a> • 
+    <a href="#kurikulum" style="color: #2563eb; text-decoration: none; font-weight: 600; margin: 0 8px;">Kurikulum</a> • 
+    <a href="#media" style="color: #2563eb; text-decoration: none; font-weight: 600; margin: 0 8px;">Media</a>
+          </nav>
+
 
     <!--KETENTUAN TENTANG PONDOK IT (MINIMAL 5 PARAGRAF)-->
     <section id="tentang">
