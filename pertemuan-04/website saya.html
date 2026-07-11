@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- METADATA CORE & RESPONSIVE LAYOUT -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- OPTIMASI SEO EKSTERNAL (SEARCH ENGINE OPTIMIZATION) -->
+    <meta name="description" content="Portal Interaktif Pondok IT - Lembaga Pendidikan Pesantren Teknologi Gratis di Yogyakarta. Menyiapkan Pemuda Mandiri, Profesional, Beradab, dan Siap Mengabdi untuk Ummat.">
+    <meta name="keywords" content="Pondok IT, Pesantren Programmer, Belajar Coding Gratis, Backend Laravel, Frontend React, Bisnis Digital, Pemuda Ummat, Ngawi, Yogyakarta">
+    <meta name="author" content="Ahmad Wildan Asy Syifa">
+    <meta name="robots" content="index, follow">
+
+    <!-- KETENTUAN SEO: TITLE TAG PERAMBAN -->
+    <title>Pondok IT | Menyiapkan Pemuda Buat Ummat - Portal Profil Resmi Interaktif</title>
+
+    <!-- LOAD EXTERNAL ICON FOR UI PREMIUM (FONT AWESOME V6) -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        /* ===================================================
+           BAGIAN 2: CSS VARIABLES, RESET, & CORE ARCHITECTURE
+           =================================================== */
+        :root {
+            /* Palet Warna Utama Menyesuaikan Logo Pondok IT */
+            --clr-green: #10b981;
+            --clr-blue: #06b6d4;
+            --clr-purple: #8b5cf6;
+            --clr-dark: #1f2937;
+            --clr-muted: #64748b;
+            --clr-light-bg: #f8fafc;
+            --clr-card-bg: #ffffff;
+            
+            /* Gradasi Harmonis Khas Branding */
+            --grad-main: linear-gradient(135deg, var(--clr-green), var(--clr-blue), var(--clr-purple));
+            --grad-soft-green: #f0fdf4;
+            
+            /* Tipografi & Batas Efek */
+            --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.01);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius-lg: 16px;
+            --border-radius-md: 8px;
+        }
+
+        /* Reset Gaya Bawaan Browser */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            background-color: var(--clr-light-bg);
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Kontainer Utama Pengikat Seluruh Elemen */
+        .app-container {
+            max-width: 1140px;
+            margin: 50px auto;
+            background-color: var(--clr-card-bg);
+            padding: 50px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-premium);
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+        /* ===================================================
+           BAGIAN 3: CSS HEADER & NAVIGASI TAB INTERAKTIF
+           =================================================== */
+        header {
+            text-align: center;
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        header img {
+            max-width: 170px;
+            height: auto;
+            transition: var(--transition-smooth);
+        }
+        
+        header img:hover {
+            transform: scale(1.05) rotate(1deg);
+        }
+        
+        h1 {
+            color: var(--clr-dark);
+            font-size: 34px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 20px;
+            font-weight: 800;
+        }
+        
+        h2 {
+            color: var(--clr-dark);
+            font-size: 26px;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        /* Garis bawah dekoratif dinamis berbasis gradasi */
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 5px;
+            background: var(--grad-main);
+            border-radius: 10px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 22px;
+            color: #475569;
+            font-size: 16px;
+        }
+
+        /* Navigasi Bilah Tab untuk Pengendali Konten SPA */
+        .tab-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            background-color: #f1f5f9;
+            padding: 8px;
+            border-radius: 40px;
+            margin-bottom: 45px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        .tab-trigger {
+            padding: 12px 26px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--clr-muted);
+            transition: var(--transition-smooth);
+            user-select: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tab-trigger:hover {
+            color: var(--clr-dark);
+            background-color: rgba(15, 23, 42, 0.04);
+        }
+        
+        .tab-trigger.active {
+            background: var(--grad-main);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
+        }
+
+        /* Logika Transisi Visual Halaman SPA */
+        .spa-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: var(--transition-smooth);
+        }
+        
+        .spa-section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* ===================================================
+           BAGIAN 4: CSS GRID GALERI, KARTU STUDI, & TABEL
+           =================================================== */
+        
+        /* Grid Tata Letak Galeri Responsif */
+        .grid-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 35px 0;
+        }
+        .grid-gallery img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+            transition: var(--transition-smooth);
+        }
+        .grid-gallery img:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        /* Kartu Rumpun Studi (Flexbox & Grid Campuran) */
+        .prodi-flex-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        .prodi-premium-card {
+            background-color: var(--clr-card-bg);
+            border: 1px solid #e2e8f0;
+            border-radius: var(--border-radius-md);
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+            transition: var(--transition-smooth);
+        }
+        .prodi-premium-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            border-color: #cbd5e1;
+        }
+        .prodi-premium-card h3 { 
+            margin-top: 0; 
+            border-bottom: 2px dashed #f1f5f9; 
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        ul, ol { padding-left: 22px; color: #475569; }
+        li { margin-bottom: 10px; font-size: 15.5px; }
+
+        /* Komponen Input Pencarian */
+        .search-wrapper { margin-bottom: 30px; position: relative; }
+        .live-search-box {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: var(--border-radius-md);
+            border: 2px solid #e2e8f0;
+            font-size: 15px;
+            outline: none;
+            transition: var(--transition-smooth);
+            background-color: #f8fafc;
+        }
+        .live-search-box:focus {
+            border-color: var(--clr-blue);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.1);
+        }
+
+        /* Struktur Tabel Kurikulum Berkualitas */
+        .responsive-table-wrapper { overflow-x: auto; margin: 30px 0; border-radius: var(--border-radius-md); border: 1px solid #e2e8f0; }
+        table { width: 100%; border-collapse: collapse; font-size: 15.5px; text-align: left; }
+        th, td { padding: 16px 20px; }
+        th { background-color: var(--clr-dark); color: #ffffff; font-weight: 600; letter-spacing: 0.5px; }
+        td { border-bottom: 1px solid #f1f5f9; background-color: #ffffff; }
+        tr:last-child td { border-bottom: none; }
+        tr:nth-child(even) td { background-color: #f8fafc; }
+
+        /* Panel Interaktif Cek Kualifikasi */
+        .interactive-checker-panel {
+            background-color: var(--grad-soft-green);
+            border: 1px solid #bbf7d0;
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            margin-top: 30px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.01);
+        }
+        .form-control-group { margin-bottom: 18px; }
+        .form-control-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 14.5px; color: var(--clr-dark); }
+        .ui-form-input { width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 14.5px; outline: none; }
+        .ui-form-input:focus { border-color: var(--clr-green); box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1); }
+        .ui-checkbox-wrapper { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+        .btn-ui-action { background: var(--grad-main); color: #ffffff; border: none; padding: 12px 24px; font-weight: 700; border-radius: 6px; cursor: pointer; transition: var(--transition-smooth); width: 100%; font-size: 15px; }
+        .btn-ui-action:hover { opacity: 0.95; transform: translateY(-1px); }
+        .dynamic-result-box { margin-top: 20px; padding: 15px; border-radius: 6px; font-weight: 600; display: none; font-size: 15px; border-left: 5px solid transparent; }
+
+        /* Kotak Media Player Terstruktur */
+        .premium-media-card { background-color: #ffffff; padding: 25px; border-radius: var(--border-radius-md); margin-top: 25px; border: 1px solid #e2e8f0; }
+        audio, video { width: 100%; margin-top: 12px; border-radius: 6px; outline: none; }
+
+        /* Desain Struktur Footer */
+        .footer-branding {
+            text-align: center;
+            padding: 35px;
+            color: #94a3b8;
+            background-color: var(--clr-dark);
+            border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+            margin: 50px -50px -50px -50px;
+            font-size: 14.5px;
+        }
+        .footer-branding a { color: var(--clr-blue); text-decoration: none; font-weight: 700; transition: var(--transition-smooth); }
+        .footer-branding a:hover { text-decoration: underline; color: var(--clr-purple); }
+    </style>
+</head>
+<body>
+    <!-- ===================================================
+         BAGIAN 5: LAYOUT CONTAINER & HEADER BRANDING
+         =================================================== -->
+    <div class="app-container">
+        
+        <!-- HEADER UTAMA: MEMUAT LOGO DAN SLOGAN RESMI PONDOK IT -->
+        <header>
+            <!-- Mengarah ke aset subfolder images/logo.png sesuai instruksi struktur direktori -->
+            <img src="Images/pondok saya.png" alt="Logo Resmi Pondok IT">
+            <h1>Pondok IT</h1>
+            <p style="text-align: center; font-style: italic; color: var(--clr-muted); margin: 0; font-size: 16px;">
+                "Menyiapkan Pemuda Buat Ummat"
+            </p>
+        </header>
+
+        <!-- MENU NAVIGASI INTERAKTIF (SINGLE PAGE NAVIGATION VIA VANILLA JS) -->
+        <ul class="tab-navigation">
+            <li class="tab-trigger active" onclick="executeTabSwitch('tab-tentang', this)">
+                <i class="fa-solid fa-circle-info"></i> Tentang Kami
+            </li>
+            <li class="tab-trigger" onclick="executeTabSwitch('tab-prodi', this)">
+                <i class="fa-solid fa-graduation-cap"></i> Program Studi
+            </li>
+            <li class="tab-trigger" onclick="executeTabSwitch('tab-syarat', this)">
+                <i class="fa-solid fa-clipboard-list"></i> Persyaratan Masuk
+            </li>
+            <li class="tab-trigger" onclick="executeTabSwitch('tab-kurikulum', this)">
+                <i class="fa-solid fa-book-open"></i> Kurikulum & Media
+            </li>
+        </ul>
+        <!-- ===================================================
+             BAGIAN 6: HALAMAN TAB TENTANG PONDOK IT 
+             =================================================== -->
+        <section id="tab-tentang" class="spa-section active">
+            <h2>Tentang Pondok IT</h2>
+            
+            <!-- Ketentuan Paragraf 1 (Menggunakan Bahasa Sendiri) -->
+            <p>
+                Pondok IT hadir sebagai sebuah institusi pendidikan non-formal berkonsep pesantren modern yang mendedikasikan fokusnya pada pengembangan keahlian di bidang teknologi informasi. Berlandaskan misi sosial yang kuat, lembaga ini berkomitmen untuk memotong kesenjangan digital dengan menyediakan sarana pembelajaran berkualitas premium secara gratis bagi para pemuda. Di tempat ini, para santri digembleng secara intensif agar mampu menguasai standar kompetensi teknologi terapan yang relevan dengan ekosistem industri digital saat ini.
+            </p>
+            
+            <!-- Ketentuan Paragraf 2 (Menggunakan Bahasa Sendiri) -->
+            <p>
+                Selain membekali para santri dengan kecakapan teknis industri (*hard skills*) seperti logika pemrograman dan arsitektur data, Pondok IT menanamkan pilar pembentukan karakter (*soft skills*) sebagai fondasi utama. Kurikulum pendidikan diintegrasikan secara langsung dengan pembinaan nilai-nilai spiritual, pengajaran adab, latihan kepemimpinan mandiri, hingga target hafalan Al-Qur'an harian. Melalui pendekatan kurikulum yang seimbang ini, setiap individu dibentuk untuk menjadi tenaga ahli yang tidak hanya unggul secara intelek tetapi juga memiliki integritas moral yang luhur.
+            </p>
+            
+            <!-- Ketentuan Paragraf 3 (Menggunakan Bahasa Sendiri) -->
+            <p>
+                Mengusung nilai luhur dari slogan utamanya yaitu "Menyiapkan Pemuda Buat Ummat", lembaga ini berupaya mencetak generasi penerus yang siap memberikan kontribusi nyata di tengah masyarakat. Para alumni dipersiapkan memiliki mentalitas kemandirian ekonomi yang tangguh agar mampu melahirkan berbagai inovasi produk digital orisinal, menggerakkan roda UMKM lokal, membuka lapangan pekerjaan baru, serta membawa dampak kemaslahatan sosial yang luas di era disrupsi teknologi modern.
+            </p>
+            <!-- ===================================================
+                 BAGIAN 7: MULTIMEDIA GALERI GAMBAR LOKAL
+                 =================================================== -->
+            <!-- Memuat 3 gambar di luar logo dengan jalur subfolder images/ sesuai instruksi -->
+            <div class="grid-gallery">
+                <div class="gallery-item">
+                    <img src="Images/foto sanrti.png" alt="Suasana Ruang Belajar Coding Programmer di Pondok IT">
+                </div>
+                <div class="gallery-item">
+                    <img src="Images/foto santri.png" alt="Aktivitas Diskusi Dan Kolaborasi Proyek Santri">
+                </div>
+                <div class="gallery-item">
+                    <img src="Images/foto sanrti.png" alt="Fasilitas Gedung Lingkungan Asrama Belajar">
+                </div>
+            </div>
+        </section>
+        <!-- ===================================================
+             BAGIAN 8: HALAMAN TAB PROGRAM STUDI
+             =================================================== -->
+        <section id="tab-prodi" class="spa-section">
+            <h2>Program Studi Pilihan</h2>
+            <p>Pondok IT membagi fokus keahlian menjadi dua rumpun besar. Gunakan kolom pencarian di bawah ini untuk memfilter daftar keahlian secara instan menggunakan JavaScript:</p>
+            
+            <!-- Elemen Input Pencarian Real-Time -->
+            <div class="search-wrapper">
+                <input type="text" id="prodiSearch" class="live-search-box" placeholder="Ketik keahlian yang ingin dicari (contoh: Backend, Mobile, Desain)..." oninput="executeLiveSearch()">
+            </div>
+
+            <div class="prodi-flex-container">
+                <!-- Rumpun 1: Programmer (Menggunakan Unordered List) -->
+                <div class="prodi-premium-card" style="border-top: 4px solid var(--clr-green);">
+                    <h3><i class="fa-solid fa-code" style="color: var(--clr-green);"></i> Programmer</h3>
+                    <ul class="target-search-list">
+                        <li>Backend</li>
+                        <li>Frontend</li>
+                        <li>Mobile</li>
+                    </ul>
+                </div>
+
+                <!-- Rumpun 2: Bisnis Digital (Menggunakan Unordered List) -->
+                <div class="prodi-premium-card" style="border-top: 4px solid var(--clr-blue);">
+                    <h3><i class="fa-solid fa-chart-line" style="color: var(--clr-blue);"></i> Bisnis Digital</h3>
+                    <ul class="target-search-list">
+                        <li>Digital Marketing</li>
+                        <li>Content Creator</li>
+                        <li>Design Grafis</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- ===================================================
+             BAGIAN 9: HALAMAN TAB PERSYARATAN MASUK
+             =================================================== -->
+        <section id="tab-syarat" class="spa-section">
+            <h2>Persyaratan Masuk</h2>
+            <p>Prosedur reguler tahapan seleksi penerimaan santri baru wajib memenuhi poin-poin kualifikasi berikut:</p>
+            
+            <!-- KETENTUAN: Menggunakan Ordered List Sesuai Format -->
+            <ol style="margin-bottom: 35px; line-height: 2;">
+                <li>Lulusan SMA/SMK</li>
+                <li>Usia sesuai ketentuan</li>
+                <li>Memiliki minat di bidang IT</li>
+                <li>Mendapat izin orang tua</li>
+            </ol>
+
+            <!-- PANEL INTERAKTIF: JAVASCRIPT SIMULATOR KELAYAKAN ADM -->
+            <div class="interactive-checker-panel">
+                <h3 style="margin-top: 0; color: var(--clr-green); font-size: 18px; margin-bottom: 5px;">
+                    <i class="fa-solid fa-calculator"></i> Simulator Kualifikasi Seleksi Santri
+                </h3>
+                <p style="font-size: 14px; margin-bottom: 20px; color: #556575;">
+                    Uji status kelayakan kualifikasi awal Anda secara otomatis melalui sistem logika di bawah ini:
+                </p>
+                
+                <div class="form-control-group">
+                    <label for="inputSekolah">Pendidikan Terakhir:</label>
+                    <select id="inputSekolah" class="ui-form-input">
+                        <option value="SMA">SMA / SMK / Sederajat atau Diatasnya</option>
+                        <option value="SMP">SMP / Dibawahnya</option>
+                    </select>
+                </div>
+                
+                <div class="form-control-group">
+                    <label for="inputUsia">Usia Anda Saat Ini (Tahun):</label>
+                    <input type="number" id="inputUsia" class="ui-form-input" placeholder="Contoh: 18">
+                </div>
+
+                <div class="form-control-group">
+                    <div class="ui-checkbox-wrapper">
+                        <input type="checkbox" id="checkIzin">
+                        <label for="checkIzin" style="margin: 0; font-weight: normal; color: #475569;">Sudah mendapatkan izin tertulis resmi dari Orang Tua / Wali</label>
+                    </div>
+                    <div class="ui-checkbox-wrapper">
+                        <input type="checkbox" id="checkMinat">
+                        <label for="checkMinat" style="margin: 0; font-weight: normal; color: #475569;">Memiliki minat tinggi dan siap berkomitmen penuh belajar IT</label>
+                    </div>
+                </div>
+
+                <button class="btn-ui-action" onclick="calculateAdmissionEligibility()">Uji Kelayakan Seleksi</button>
+                <div id="boxHasil" class="dynamic-result-box"></div>
+            </div>
+        </section>
+        <!-- ===================================================
+             BAGIAN 10: HALAMAN TAB KURIKULUM & MULTIMEDIA
+             =================================================== -->
+        <section id="tab-kurikulum" class="spa-section">
+            <h2>Program Belajar & Fokus Kompetensi</h2>
+            <p>Tabel pemetaan kurikulum teknologi terapan dan ekosistem alat bantu (*tools*) utama yang dipelajari pada setiap bidang keahlian:</p>
+            
+            <!-- KETENTUAN: Struktur Komponen Tabel Formal -->
+            <div class="responsive-table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Program</th>
+                            <th>Fokus Belajar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Backend</strong></td>
+                            <td>Laravel / NodeJS</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Frontend</strong></td>
+                            <td>React</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mobile</strong></td>
+                            <td>React Native</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Digital Marketing</strong></td>
+                            <td>Meta Ads</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Content Creator</strong></td>
+                            <td>Multimedia</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Dokumentasi Multimedia</h2>
+            <p>Simak pemaparan profil kelembagaan serta penjelasan lingkungan belajar asrama santri lewat berkas media lokal di bawah ini:</p>
+            
+            <!-- KETENTUAN: Komponen Audio Mengarah ke audio/profile.mp3 -->
+            <div class="premium-media-card" style="border-left: 5px solid var(--clr-blue);">
+                <strong style="color: var(--clr-dark);"><i class="fa-solid fa-volume-high"></i> Audio Profil Pondok IT:</strong><br>
+                <audio controls>
+                    <source src="audios/11 Someone Like You.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen pemutaran audio lokal.
+                </audio>
+            </div>
+
+            <!-- KETENTUAN: Komponen Video Mengarah ke video/company-profile.mp4 -->
+            <div class="premium-media-card" style="border-left: 5px solid var(--clr-purple);">
+                <strong style="color: var(--clr-dark);"><i class="fa-solid fa-video"></i> Video Company Profile Pondok IT:</strong><br>
+                <video controls>
+                    <source src="videos/Moana (2016).mp4" type="video/mp4">
+                    Browser Anda tidak mendukung elemen pemutaran video lokal.
+                </video>
+            </div>
+        </section>
+        <!-- ===================================================
+             BAGIAN 11: FOOTER BRANDING AND OUTBOUND LINKS
+             =================================================== -->
+        <footer class="footer-branding";>
+            <p>&copy; 2026 Pondok IT - Menyiapkan Pemuda Buat Ummat. Seluruh Hak Cipta Dilindungi.</p>
+            
+            <!-- KETENTUAN: Link Eksternal Dengan Target Blank Sesuai Rubrik -->
+            <p style="font-size: 13.5px; margin-top: 10px; color: #64748b;">
+                Tautan Resmi Institusi: 
+                <a href="https://pondokit.com" target="_blank" rel="noopener noreferrer">pondokit.com</a> | 
+                Sistem Pendaftaran Santri: 
+                <a href="https://pondokit.com" target="_blank" rel="noopener noreferrer">Formulir Penerimaan Baru</a>
+            </p>
+            
+            <p style="font-size: 12px; margin-top: 15px; color: #475569; opacity: 0.7;">
+                Dibuat Sebagai Tugas Praktikum Komplit Pengembangan Web Semantik - Pertemuan 04
+            </p>
+        </footer>
+
+    </div> <!-- Penutup .app-container dari Bagian 2 -->
+    <!-- ===================================================
+         BAGIAN 12: LOGIKA INTEGRASI VANILLA JAVASCRIPT
+         =================================================== -->
+    <script>
+        /**
+         * 1. Logika Pemindah Halaman Instan (SPA Tab Switcher)
+         * Mengontrol visibilitas section berdasarkan tab yang diklik pengguna.
+         */
+        function executeTabSwitch(sectionId, currentTabElement) {
+            // Sembunyikan seluruh penampang halaman section SPA
+            const allSections = document.querySelectorAll('.spa-section');
+            allSections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Bersihkan seluruh status aktif dari tombol navigasi utama
+            const allTabs = document.querySelectorAll('.tab-trigger');
+            allTabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Aktifkan section dan tombol tab yang dipilih oleh user
+            const targetedSection = document.getElementById(sectionId);
+            targetedSection.classList.add('active');
+            currentTabElement.classList.add('active');
+        }
+
+        /**
+         * 2. Logika Live Search Real-Time Program Studi
+         * Menyaring secara dinamis daftar keahlian berdasarkan kata kunci yang diketik.
+         */
+        function executeLiveSearch() {
+            const searchKeyword = document.getElementById('prodiSearch').value.toLowerCase();
+            const listItems = document.querySelectorAll('.target-search-list li');
+            
+            listItems.forEach(item => {
+                const textValue = item.innerText.toLowerCase();
+                
+                if (textValue.includes(searchKeyword)) {
+                    item.style.display = "list-item";
+                    item.style.color = "var(--clr-blue)"; // Sorotan warna teks yang cocok
+                    item.style.fontWeight = "700";
+                } else if (searchKeyword === "") {
+                    item.style.display = "list-item";
+                    item.style.color = "#475569"; // Kembalikan ke warna dasar
+                    item.style.fontWeight = "normal";
+                } else {
+                    item.style.display = "none"; // Sembunyikan elemen yang tidak cocok
+                }
+            });
+        }
+
+        /**
+         * 3. Logika Simulator Kalkulator Kelayakan Administrasi
+         * Menguji kelayakan calon santri berdasarkan parameter regulasi pendaftaran.
+         */
+        function calculateAdmissionEligibility() {
+            const tipeSekolah = document.getElementById('inputSekolah').value;
+            const angkaUsia = parseInt(document.getElementById('inputUsia').value);
+            const statusIzin = document.getElementById('checkIzin').checked;
+            const statusMinat = document.getElementById('checkMinat').checked;
+            const resultDisplayBox = document.getElementById('boxHasil');
+            
+            // Tampilkan kotak penampung hasil luaran
+            resultDisplayBox.style.display = "block";
+
+            // Validasi kegagalan input jika kolom usia kosong/bukan angka positif
+            if (isNaN(angkaUsia) || angkaUsia <= 0) {
+                resultDisplayBox.style.backgroundColor = "#fee2e2";
+                resultDisplayBox.style.color = "#991b1b";
+                resultDisplayBox.style.borderColor = "#fca5a5";
+                resultDisplayBox.innerHTML = "⚠️ Harap masukkan angka usia pendaftar yang valid dan rasional!";
+                return;
+            }
+
+            // Algoritma Aturan Percabangan Kondisional Seleksi Administrasi
+            if (tipeSekolah === "SMA" && angkaUsia >= 16 && angkaUsia <= 25 && statusIzin && statusMinat) {
+                resultDisplayBox.style.backgroundColor = "#dcfce7";
+                resultDisplayBox.style.color = "#166534";
+                resultDisplayBox.style.borderColor = "#86efac";
+                resultDisplayBox.innerHTML = "🎉 **Status: LAYAK!** Selamat, data kualifikasi awal Anda telah memenuhi seluruh ketentuan regulasi administrasi untuk mendaftar menjadi santri di Pondok IT.";
+            } else {
+                resultDisplayBox.style.backgroundColor = "#fef3c7";
+                resultDisplayBox.style.color = "#92400e";
+                resultDisplayBox.style.borderColor = "#fcd34d";
+                resultDisplayBox.innerHTML = "❌ **Status: BELUM MEMENUHI SYARAT!** Mohon maaf, berdasarkan aturan baku pondok, pendaftar wajib lulusan SMA/SMK sederajat, berusia antara 16-25 tahun, serta mengantongi izin resmi orang tua.";
+            }
+        }
+    </script>
+</body>
+</html>
