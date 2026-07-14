@@ -1,0 +1,149 @@
+/* 1. DASAR  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  font-family: Arial, sans-serif; 
+  background:linear-gradient(135deg, #00a1ed, #fff4fd);     
+  color: #333333;                
+  line-height: 1.6;
+                
+}
+
+/* 2. BAGIAN ATAS (HEADER & NAVIGASI) */
+#main-header {
+  background:linear-gradient(135deg, #00b8e2, #e1ffb0);    
+  color: rgb(249, 253, 253);                  
+  padding: 30px;               
+  text-align: center;
+  box-shadow: black;
+              
+}
+
+.navbar {
+  margin-bottom: 20px;
+  text-align: center;           
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;         
+  margin: 0 10px;              
+  font-weight: bold;             
+}
+
+.navbar a:hover {
+  color: #ffd700;                
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;            
+  border: 3px solid rgb(74, 165, 207);       
+  object-fit: cover;             
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  color: #ffd700;                
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+/*   3. STRUKTUR KOTAK KONTEN  */
+.container {
+  max-width: 1000px;              
+  margin: 20px auto;             
+  padding: 0 15px;              
+}
+
+.section-card {
+  background-color: white;      
+  padding: 25px;
+  margin-bottom: 0px;          
+  border-radius: 0px;            
+  border: 1px solid #cccccc;     
+}
+
+.section-card h2 {
+  color: #1e3c72;                
+  margin-bottom: 0px;
+  border-bottom: 0px solid #1e3c72; 
+  padding-bottom: 0px;
+}
+
+#about p {
+  margin-bottom: 10px;
+  text-align: justify;           
+}
+#hobi ul {
+  padding-left: 20px;            
+}
+
+/* 4. TABEL */
+.project-item {
+  background-color: #f9f9f9;    
+  border: 1px solid #e0e0e0;
+}
+
+.tech-stack {
+  font-size: 0.8rem;
+  background-color: #e0e0e0;
+  padding: 2px 6px;
+  font-weight: bold;
+}
+
+.skill-table {
+  width: 100%;                   
+  border-collapse: collapse;     
+}
+.skill-table th, .skill-table td {
+  padding: 10px;
+  border: 1px solid #cccccc;     
+}
+
+.skill-table th {
+  background-color: #f2f2f2;     
+}
+
+/*   5. FORMULIR KONTAK  */
+.form-group {
+  margin-bottom: 25px;           
+}
+.form-group label {
+  display: block;               
+  margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;                   
+  border: 1px solid #cccccc;
+}
+
+.btn-submit {
+  background-color: #1e3c72;     
+  color: white;
+  padding: 10px 20px;
+  border: none;                  
+  cursor: pointer;              
+  font-weight: bold;
+}
+
+.btn-submit:hover {
+  background:linear-gradient(135deg, #ffad76, #df8200);     
+}
+
+/* 6. BAGIAN BAWAH (FOOTER)*/
+footer {
+  text-align: center;
+  padding: 15px;
+  background:linear-gradient(135deg, #00d2c2, #b8ffd7);
+  color: rgb(17, 16, 16);
+  margin-top: 30px;
+  font-size: 0.9rem;
+}
