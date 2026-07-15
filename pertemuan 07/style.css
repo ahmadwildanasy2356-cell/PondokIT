@@ -1,6 +1,6 @@
 /* 1. DASAR  */
 * {
-  margin: 0;
+  margin:0;
   padding: 0;
   box-sizing: border-box;
   
@@ -8,14 +8,15 @@
 
 body {
   font-family: Arial, sans-serif; 
-  background:linear-gradient(135deg, #00a1ed, #fff4fd);     
+  background: linear-gradient(135deg, #00b8e2, #e1ffb0);
   color: #333333;                
   line-height: 1.6;
+  scroll-behavior: smooth;
                 
 }
 
 /* 2. BAGIAN ATAS (HEADER & NAVIGASI) */
-#main-header {
+#main-header {  
   background:linear-gradient(135deg, #00b8e2, #e1ffb0);    
   color: rgb(249, 253, 253);                  
   padding: 30px;               
@@ -41,7 +42,7 @@ body {
 }
 
 .profile-img {
-  width: 120px;
+  width: 150px;
   height: 120px;
   border-radius: 50%;            
   border: 3px solid rgb(74, 165, 207);       

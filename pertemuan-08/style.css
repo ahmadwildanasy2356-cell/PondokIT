@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+  body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url(asset/Gemini_Generated_Image_k47lgsk47lgsk47l.png);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+/* MAIN */
+#main-header {  
+  background: linear-gradient(135deg, #f97316,#eab308,#14b8a6);    
+  color: rgb(1, 10, 10);                  
+  padding: 5px 30px;          
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-size: medium;
+  display: flex;
+  flex-direction: row;      
+  justify-content: space-between; 
+  align-items: center;       
+  gap: 30px;
+}
+
+/* PROFIL */
+.header-profil {
+  display: flex;
+  align-items: center;
+  gap: 15px; 
+}
+
+.profile-img {
+  width: 80px;   
+  height: 80px;  
+  border-radius: 50%;            
+  border: 3px solid rgb(74, 165, 207);       
+  object-fit: cover;             
+}
+
+/* Navigasi Menu */
+.navbar {
+  margin-bottom: 0; 
+  display: flex;
+  gap: 10px;       
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;         
+  padding: 8px 15px;              
+  font-weight: bold;             
+}
+
+.navbar a:hover {
+  color: #ffd700;                
+}
+
+.profile-img {
+  width: 150px;
+  height: 120px;
+  border-radius: 50%;            
+  border: 3px solid rgb(74, 165, 207);       
+  object-fit: cover;             
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  color: #ffd700;                
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+/*   3. STRUKTUR KOTAK KONTEN  */
+.container {
+  max-width: 1000px;              
+  margin: 20px auto;             
+  padding: 0 15px;              
+}
+
+.section-card {
+  background-color: white;      
+  padding: 25px;
+  margin-bottom: 0px;          
+  border-radius: 0px;            
+  border: 1px solid #cccccc;     
+}
+
+.section-card h2 {
+  color: #1e3c72;                
+  margin-bottom: 0px;
+  border-bottom: 0px solid #1e3c72; 
+  padding-bottom: 0px;
+}
+
+#about p {
+  margin-bottom: 10px;
+  text-align: justify;           
+}
+#keunggulan ul {
+  padding-left: 20px;            
+}
+
+/* 4. TABEL */
+/* 1. Pengaturan kontainer */
+.container2 {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* 2. Judul Utama "Nike Air Force" */
+.project-item h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+  /* gambar */
+.content-wrapper {
+  display: flex;
+  align-items: flex-start; 
+  gap: 30px;               
+}
+
+/* 4. Mengatur ukuran gambar */
+.project-img {
+  flex-shrink: 0;          
+}
+
+.project-img img {
+  max-width: 350px;        
+  width: 100%;
+  height: auto;
+  border-radius: 8px;      
+  display: block;
+}
+
+/* 5.  sebelah kanan */
+.project-teks {
+  flex-grow: 1;           
+}
+
+/* "Keunggulan" */
+.project-teks h3 {
+  margin-top: 0;           
+  font-size: 20px;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+/* Merapikan daftar list */
+.project-teks ul {
+  margin: 0;
+  padding-left: 20px;      
+  line-height: 1.6;        
+}
+
+.project-teks li {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.tech-stack {
+  font-size: 0.8rem;
+  background-color: #e0e0e0;
+  padding: 2px 6px;
+  font-weight: bold;
+}
+
+.produk-table {
+  width: 100%;                   
+  border-collapse: collapse;     
+}
+.produk-table th, .produk-table td {
+  padding: 10px;
+  border: 1px solid #cccccc;     
+}
+
+.produk-table th {
+  background-color: #f2f2f2;     
+}
+td ul, td ol {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside; 
+}
+
+/*   5. FORMULIR KONTAK  */
+.form-group {
+  margin-bottom: 25px;           
+}
+.form-group label {
+  display: block;               
+  margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;                   
+  border: 1px solid #cccccc;
+}
+
+.btn-submit {
+  background-color: #1e3c72;     
+  color: white;
+  padding: 10px 20px;
+  border: none;                  
+  cursor: pointer;              
+  font-weight: bold;
+}
+
+.btn-submit:hover {
+  background:linear-gradient(135deg, #ffad76, #df8200);     
+}
+
+/* 6. BAGIAN BAWAH (FOOTER)*/
+footer {
+  text-align: center;
+  padding: 20px;
+  background:linear-gradient(135deg,#f97316,#eab308,#14b8a6 );
+  color: rgb(17, 16, 16);
+  margin-top: 30px;
+  font-size: 0.9rem;
+}
