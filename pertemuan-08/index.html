@@ -4,72 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Website Belanja</title>
-  <!-- Favicon -->
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-  <!-- Menghubungkan ke External CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header & Navigasi -->
   <header id="main-header">
-    <!-- Menu Navigasi -->
-    <nav class="navbar">
-      <a href="#about">Tentang</a>
-      <a href="#projects">Produk</a>
-      <a href="#skills">keunggulan</a>
-      <a href="#produk lainnya">Produk Lainnya</a>
-      <a href="#contact">Kontak</a>
-      <button type="submit" class="btn-submit">Belanja Sekarang</button>
-    </nav>
-    
     <div class="header-content">
-      <img src="asset/LOGO.png" alt="Pas Foto Ahmad Wildan Asy Syifa" class="profile-img">
-      <p>PILIHAN SAAT BELANJA</p> 
+      <img src="asset/LOGO.png" alt="Logo Aura Footwear" class="profile-img">
     </div>
+
+    <nav class="navbar">
+      <a href="#projects">Produk Utama</a>
+      <a href="#keunggulan">Keunggulan Toko</a>
+      <a href="#produk-lainnya">Produk Lainnya</a>
+      <a href="#contact">Kontak</a>
+      <button type="button" class="btn-submit">Belanja Sekarang</button>
+    </nav>
   </header>
-    
-  <main class="container">
 
-    <!-- Tentang Saya -->
-    <section id="about" class="section-card">
-      <h2>Toko Kami</h2>
-      <p>Selamat datang di Aura Footwear, rumah bagi para pecinta sneakers, pelari, dan Anda yang mengutamakan kenyamanan dalam setiap langkah. Kami hadir untuk menyediakan pilihan sepatu terbaik yang tidak hanya melindungi kaki Anda, tetapi juga mendongkrak rasa percaya diri di setiap aktivitas—mulai dari melangkah ke sekolah, kampus, tempat kerja, hingga melesat di trek lari.</p>
-      <p>Kami percaya bahwa sepatu yang tepat bisa membawa Anda ke tempat-tempat yang hebat!</p>
-    </section>
+  <main>
 
-    <!-- PROYEK BARU -->
     <section id="projects" class="section-card">
-      <h2>Produk</h2>
+      <h2>Produk Utama</h2>
+      
       <div class="container2">
-  <div class="project-item">
-    <h3>Aura Air Force</h3>
-    
-    <div class="content-wrapper">
-      
-      <div class="project-img">
-        <img src="asset/sepatu nike.png" alt="gambar produk">
+        <div class="project-item">
+          <h3>Aura Air Force</h3>
+          
+          <div class="content-wrapper">
+            <div class="project-img">
+              <img src="asset/sepatu nike.png" alt="gambar produk">
+            </div>
+            
+            <div class="project-teks">
+              <h4>Keunggulan Produk</h4>
+              <ul>
+                <li>Bahan Premium</li>
+                <li>Desain Modern</li>
+                <li>Daya Tahan Tinggi</li>
+                <li>Kenyamanan Kasual</li>
+                <li>Sirkulasi Udara Maksimal</li>
+              </ul>
+              <p style="height: 30px; font-weight: bold;">Harga: Rp1.300.000</p>
+              <button type="button" class="btn-submit">Belanja Sekarang</button>
+            </div>
+          </div> 
+        </div>
       </div>
-      
-      <div class="project-teks">
-        <h3>Keunggulan</h3>
-        <ul>
-          <li>Bahan Premium</li>
-          <li>Desain Modern</li>
-          <li>Daya Tahan Tinggi</li>
-          <li>Kenyamanan Kasual</li>
-          <li>Sirkulasi Udara Maksimal</li>
-        </ul>
-        <p style="height: 30px;">Harga:1,300.000</p>
-        <button type="submit" class="btn-submit">Belanja Sekarang</button>
-      </div>
-    </div> 
-  </div>
-</div>
- 
     </section>
 
-    <!-- Hobi -->
     <section id="keunggulan" class="section-card">
       <h2>Keunggulan Toko Kami</h2>
       <ul>
@@ -81,8 +65,7 @@
       </ul>
     </section>
 
-    <!-- Skill -->
-    <section id="produks" class="section-card">
+    <section id="produk-lainnya" class="section-card">
       <h2>Produk Lainnya</h2>
       <table class="produk-table">
         <thead>
@@ -101,10 +84,9 @@
                 <li>Kenyamanan Kasual</li>
               </ul>
             </td>
-            
           </tr>
           <tr>
-            <td>Aura Zoom Pegasus(42) </td>
+            <td>Aura Zoom Pegasus (42)</td>
             <td>
               <ul>
                 <li>Sirkulasi Udara Maksimal</li>
@@ -127,7 +109,6 @@
       </table>
     </section>
 
-    <!-- Kontak -->
     <section id="contact" class="section-card">
       <h2>Hubungi Saya</h2>
       <form action="#" method="post" class="contact-form">
@@ -152,9 +133,8 @@
 
   </main>
 
-  <!-- Footer -->
   <footer>
-    <p> 2026 Ahmad Wildan Asy Syifa. </p> 
+    <p>&copy; 2026 Ahmad Wildan Asy Syifa. All Rights Reserved.</p> 
   </footer>
     
 </body>

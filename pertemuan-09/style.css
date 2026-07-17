@@ -1,0 +1,173 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('asset/StockCake-Plain_black_background-2120890-standard.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 20px;
+}
+
+/* Container untuk membungkus semua kartu */
+.aku {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* PRODUCT CARD COMPONENT */
+.product-card1 {
+    width: 100%;
+    max-width: 450px;
+    background: linear-gradient(135deg, white, grey , black);
+    border: 1px solid rgb(17, 16, 16);
+    border-radius: 12px;
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.15),
+        0 8px 24px rgba(0, 0, 0, 0.20);
+    padding: 50px;
+}
+.product-card2 {
+    width: 100%;
+    max-width: 450px;
+    background: linear-gradient(135deg, white,grey,black);
+    border: 1px solid rgb(17, 16, 16);
+    border-radius: 12px;
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.15),
+        0 8px 24px rgba(0, 0, 0, 0.20);
+    padding: 50px;
+}
+.product-card3 {
+    width: 100%;
+    max-width: 450px;
+    background: linear-gradient(135deg,white,grey,black);
+    border: 1px solid rgb(17, 16, 16);
+    border-radius: 12px;
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.15),
+        0 8px 24px rgba(0, 0, 0, 0.20);
+    padding: 50px;
+}
+.product-card4 {
+    width: 100%;
+    max-width: 450px;
+    background: linear-gradient(135deg,white,grey,black);
+    border: 1px solid rgb(17, 16, 16);
+    border-radius: 12px;
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.15),
+        0 8px 24px rgba(0, 0, 0, 0.20);
+    padding: 50px;
+}
+
+.product-card5 {
+    width: 100%;
+    max-width: 1000px;
+    background: rgba(105, 108, 116, 0.7); 
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(224, 217, 217, 0.849);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+    padding: 25px 20px;
+}
+
+.tag {
+    background: #fbf0e3;
+    color: #6d4c41;
+    padding: 1px 9px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+  }
+
+.product-card5 h3 { color: #ffffff; }
+.product-card5 .product-details h4 { color: #f1f5f9; }
+.product-card5 .product-details li { color: #cbd5e1; }
+
+.product-card h3 {
+    font-size: 20px;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+/* Box Foto Produk */
+.product-img-box {
+    width: 100%;
+    height: 170px;
+    background-color: #faf9f7;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+/*  gambar */
+.product-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    border-radius: 8px; 
+}
+
+/* Detail & Teks */
+.product-details h4 {
+    font-size: 14px;
+    color: #252c35;
+    margin-bottom: 3px;
+    
+}
+
+.product-details ul {
+    list-style-position: inside;
+    margin-bottom: 16px;
+}
+
+.product-details li {
+    font-size: 14px;
+    color: #00050f;
+    margin-bottom: 4px;
+}
+
+.product-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #12b920; 
+    margin-bottom: 16px;
+}
+
+/* BUTTON*/
+.btn-neumorphism {
+    background-color: #eff1f3;     
+    color: black; 
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 10px;                  
+    cursor: pointer;              
+    font-weight: bold;
+    transition: all 0.2s ease; 
+}
+
+.btn-neumorphism:hover {
+    background: linear-gradient(red, orange, yellow); 
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+}
+
+.btn-neumorphism:active {
+    background: rgba(0, 0, 0, 0.1);
+    transform: scale(0.98); 
+}

@@ -1,164 +1,161 @@
+/* --- RESET STYLE --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-  body {
-  margin: 0;
-  min-height: 100vh;
+body {
+  min-height: 1000px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url(asset/Gemini_Generated_Image_k47lgsk47lgsk47l.png);
+  background-image: url('asset/Gemini_Generated_Image_k47lgsk47lgsk47l.png');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: scroll;
 }
 
-/* MAIN */
+/* --- HEADER & NAVIGASI (PERBAIKAN) --- */
 #main-header {  
-  background: linear-gradient(135deg, #f97316,#eab308,#14b8a6);    
+  background: linear-gradient(135deg, #f97316, #eab308, #14b8a6);    
   color: rgb(1, 10, 10);                  
-  padding: 5px 30px;          
+  padding: 10px 40px;         
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   font-size: medium;
   display: flex;
-  flex-direction: row;      
-  justify-content: space-between; 
+  justify-content: space-between; /* Membuat logo di kiri ujung dan menu di kanan ujung */
   align-items: center;       
-  gap: 30px;
+  width: 100%;
 }
 
-/* PROFIL */
-.header-profil {
+.header-content {
   display: flex;
   align-items: center;
-  gap: 15px; 
+  flex-shrink: 0;
 }
 
+/* Mengatur ukuran Logo agar proporsional di dalam header navbar */
 .profile-img {
-  width: 80px;   
-  height: 80px;  
-  border-radius: 50%;            
-  border: 3px solid rgb(74, 165, 207);       
-  object-fit: cover;             
+  height: 50px;       /* Batasi tinggi agar tidak membuat header terlalu melar */
+  width: auto;        /* Biarkan lebar otomatis menyesuaikan rasio logo Aura */
+  object-fit: contain;             
 }
 
-/* Navigasi Menu */
 .navbar {
-  margin-bottom: 0; 
   display: flex;
-  gap: 10px;       
+  align-items: center;
+  gap: 20px;          /* Jarak antar menu navigasi */
+  flex-wrap: wrap;
 }
 
 .navbar a {
   color: white;
   text-decoration: none;         
-  padding: 8px 15px;              
-  font-weight: bold;             
+  padding: 8px 12px;              
+  font-weight: bold;
+  transition: color 0.3s ease;             
 }
 
 .navbar a:hover {
   color: #ffd700;                
 }
-
-.profile-img {
-  width: 150px;
-  height: 120px;
-  border-radius: 50%;            
-  border: 3px solid rgb(74, 165, 207);       
-  object-fit: cover;             
-  margin-bottom: 10px;
-}
-
 .social-links a {
   color: #ffd700;                
   text-decoration: none;
   margin: 0 5px;
 }
 
-/*   3. STRUKTUR KOTAK KONTEN  */
-.container {
+/* --- STRUKTUR UTAMA HALAMAN --- */
+main {
   max-width: 1000px;              
-  margin: 20px auto;             
+  margin: 30px auto;             
   padding: 0 15px;              
 }
 
 .section-card {
-  background-color: white;      
-  padding: 25px;
-  margin-bottom: 0px;          
-  border-radius: 0px;            
-  border: 1px solid #cccccc;     
+  background-color: rgba(255, 255, 255, 0.95);     
+  padding: 30px;
+  margin-bottom: 25px;         
+  border-radius: 12px;           
+  border: 1px solid #e0e0e0; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .section-card h2 {
   color: #1e3c72;                
-  margin-bottom: 0px;
-  border-bottom: 0px solid #1e3c72; 
-  padding-bottom: 0px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #1e3c72; 
+  padding-bottom: 8px;
 }
 
-#about p {
-  margin-bottom: 10px;
-  text-align: justify;           
-}
 #keunggulan ul {
-  padding-left: 20px;            
+  padding-left: 20px;
+  line-height: 1.8;            
 }
 
-/* 4. TABEL */
-/* 1. Pengaturan kontainer */
+/* --- DETAIL PRODUK UTAMA --- */
+/* 1. Pengaturan kontainer agar membungkus kartu tepat di tengah */
 .container2 {
-  max-width: 800px;
+  max-width: 1000px; /* Sesuaikan dengan max-width elemen main Anda */
   margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  padding: 20px 0;
+  display: flex;       /* Aktifkan Flexbox */
+  justify-content: center; /* Posisikan kartu produk tepat di tengah secara horizontal */
+  align-items: center;
 }
 
-/* 2. Judul Utama "Nike Air Force" */
+/* 2. Kartu Produk (Project Item) */
+.project-item {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Memberi bayangan halus agar kontras */
+  border: 1px solid #e8e8e8;
+  padding: 30px;
+  max-width: 650px;    /* Membatasi lebar kotak produk agar tidak terlalu melar ke samping */
+  width: 100%;         /* Fleksibel di layar kecil */
+}
+
+/* 3. Pengaturan Judul Produk agar ikut ke tengah (Opsional) */
 .project-item h3 {
   font-size: 24px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   color: #333;
+  text-align: left;    /* Biarkan tetap rata kiri, atau ubah ke 'center' jika ingin judulnya di tengah */
 }
 
-  /* gambar */
+/* 4. Layout Gambar & Teks di dalam kartu */
 .content-wrapper {
   display: flex;
-  align-items: flex-start; 
-  gap: 30px;               
+  align-items: center; /* Menjaga konten gambar dan deskripsi sejajar vertikal */
+  gap: 30px;           /* Jarak antara gambar dan teks keunggulan */
 }
 
-/* 4. Mengatur ukuran gambar */
 .project-img {
   flex-shrink: 0;          
 }
 
+/* UKURAN GAMBAR SEPATU DIPERKECIL (180px) */
 .project-img img {
-  max-width: 350px;        
+  max-width: 180px;        
   width: 100%;
   height: auto;
   border-radius: 8px;      
   display: block;
+  object-fit: contain;
 }
 
-/* 5.  sebelah kanan */
 .project-teks {
   flex-grow: 1;           
 }
 
-/* "Keunggulan" */
-.project-teks h3 {
-  margin-top: 0;           
+.project-teks h4 {
   font-size: 20px;
   color: #111;
   margin-bottom: 10px;
 }
 
-/* Merapikan daftar list */
 .project-teks ul {
-  margin: 0;
+  margin-bottom: 15px;
   padding-left: 20px;      
   line-height: 1.6;        
 }
@@ -168,64 +165,87 @@
   color: #555;
 }
 
-.tech-stack {
-  font-size: 0.8rem;
-  background-color: #e0e0e0;
-  padding: 2px 6px;
-  font-weight: bold;
+/* --- TABEL PRODUK LAINNYA --- */
+.produk-table {
+  width: 100%;                                   
+  border-collapse: collapse;
+  margin-top: 15px;     
 }
 
-.produk-table {
-  width: 100%;                   
-  border-collapse: collapse;     
-}
 .produk-table th, .produk-table td {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #cccccc;     
 }
 
 .produk-table th {
-  background-color: #f2f2f2;     
-}
-td ul, td ol {
-    margin: 0;
-    padding: 0;
-    list-style-position: inside; 
+  background-color: #f2f2f2;
+  color: #333;     
 }
 
-/*   5. FORMULIR KONTAK  */
-.form-group {
-  margin-bottom: 25px;           
+td ul {
+  list-style-position: inside; 
+  padding-left: 5px;
 }
+
+/* --- FORMULIR KONTAK --- */
+.form-group {
+  margin-bottom: 20px;           
+}
+
 .form-group label {
   display: block;               
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .form-group input, .form-group textarea {
-  width: 100%;                   
+  width: 100%;                  
   border: 1px solid #cccccc;
+  padding: 10px;
+  border-radius: 6px;
+  font-family: inherit;
 }
 
+/* --- TOMBOL-TOMBOL --- */
 .btn-submit {
   background-color: #1e3c72;     
   color: white;
   padding: 10px 20px;
-  border: none;                  
+  border: none;
+  border-radius: 6px;                  
   cursor: pointer;              
   font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .btn-submit:hover {
-  background:linear-gradient(135deg, #ffad76, #df8200);     
+  background-color: #f97316; 
+  transform: translateY(-2px);   
 }
 
-/* 6. BAGIAN BAWAH (FOOTER)*/
+/* --- FOOTER --- */
 footer {
   text-align: center;
-  padding: 20px;
-  background:linear-gradient(135deg,#f97316,#eab308,#14b8a6 );
+  padding: 25px;
+  background: linear-gradient(135deg, #f97316, #eab308, #14b8a6);
   color: rgb(17, 16, 16);
-  margin-top: 30px;
+  font-weight: bold;
   font-size: 0.9rem;
+}
+
+/* --- RESPONSIVE LAYOUT (UNTUK HP) --- */
+@media (max-width: 768px) {
+  #main-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .project-img img {
+    max-width: 100%;
+  }
 }
