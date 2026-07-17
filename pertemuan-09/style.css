@@ -75,7 +75,7 @@ body {
 .product-card5 {
     width: 100%;
     max-width: 1000px;
-    background: rgba(105, 108, 116, 0.7); 
+    background: rgba(209, 214, 230, 0.7); 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(224, 217, 217, 0.849);
