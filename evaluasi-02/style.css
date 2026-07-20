@@ -14,7 +14,7 @@ body {
 }
 
 #main-header {  
-    background: #aa83833a;    
+    background:linear-gradient(white,gray);    
     padding: 15px 5%;         
     border-bottom: 1px solid #0e0c0c;
     box-shadow: #0e0c0c;
@@ -25,6 +25,7 @@ body {
     position: static;
     top: 0;
     z-index: 1000;
+
 }
 
 .profile-img {
@@ -71,7 +72,7 @@ body {
 }
 
 .hero {
-    background-color:white;
+    background:linear-gradient(white,gray);
     color:black;
     padding: 80px 5%;
     display: flex;
@@ -149,6 +150,7 @@ body {
     height: 200px;
     object-fit: contain;
     margin-bottom: 15px;
+    border-radius: 15px;
 }
 
 .product-card h3 {
@@ -179,7 +181,7 @@ body {
 }
 
 .about-section {
-    background-color: #f9f9f9;
+    background:linear-gradient(white,gray);
     display: flex;
     align-items: center;
     gap: 40px;
@@ -194,6 +196,7 @@ body {
     height: auto;
     display: block;
     margin: 0 auto;
+    border-radius: 10px;
 }
 
 .contact-container {

@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#222;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: #0f0c0c;
+}
+
+.majalah{
+    background:white;
+    max-width: 850px;
+    width: 100%;
+    padding: 40px 30px;
+    box-shadow: 0px 4px 15px rgba(116, 119, 113, 0.918);
+    border-radius: 30px;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px solid white;
+    margin-bottom: 20px;
+}  
+
+p {
+  font-size: 0.90rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #222;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.70rem;
+    font-weight: bold;
+}
+
+.navigasi a {
+  color: #161212;
+  text-decoration: none;         
+  padding: 6px 4px;              
+  font-weight: 600;
+  font-size: 0.90rem;
+  letter-spacing: 0.3px;
+  position: relative;
+}
+
+
+.navigasi a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffd700;
+  transition: width 0.3s ease;
+}
+
+.navigasi a:hover::after {
+  width: 100%;
+}
+
+.navigasi a:hover {
+  color: #ffd700;                
+}
+
+.judul-utama{
+    font-family:  Georgia, Times, 'Times New Roman', serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.sub-judul {
+  font-family: sans-serif;
+  font-size: 0.60rem;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #222;
+  font-family: sans-serif;
+}
+
+.kontak {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.60rem;
+  margin-bottom: 20px;
+}
+
+.hak-cipta-sub {
+  font-size: 0.80rem;
+  text-align: center;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.teks-kecil {
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: justify;
+}
+
+
+
